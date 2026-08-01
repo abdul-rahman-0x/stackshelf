@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense, useMemo, useState } from "react";
-import { resources } from "@/data/resources";
+import { GITHUB_ISSUE_URL, resources } from "@/data/resources";
 import { SearchBar } from "./components/resources/search-bar";
 import { ResourceCard } from "./components/resources/resource-card";
 import { NotFound } from "./components/resources/not-found";
@@ -23,10 +23,7 @@ export default function Home() {
     };
 
     const handleSubmitResource = () => {
-        window.open(
-            "https://github.com/PraveenShinde3/resourcely.in/issues/new",
-            "_blank",
-        );
+        window.open(GITHUB_ISSUE_URL, "_blank");
     };
 
     return (

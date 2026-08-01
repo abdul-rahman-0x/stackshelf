@@ -14,6 +14,9 @@ export interface Resource {
     tags?: string[];
 }
 
+export const GITHUB_ISSUE_URL =
+    "https://github.com/abdul-rahman-0x/stackshelf/issues/new";
+
 // Data
 export const resources: Resource[] = [
     {

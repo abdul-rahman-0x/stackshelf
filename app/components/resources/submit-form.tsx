@@ -1,8 +1,8 @@
 "use client";
 
-import { GITHUB_ISSUE_URL } from "@/data/resources";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ArrowUpRight, X } from "lucide-react";
+import { GITHUB_ISSUE_URL } from "@/data/resources";
 
 interface SubmitLinkFormProps {
     githubRepoUrl?: string;
@@ -27,10 +27,8 @@ export function SubmitLinkForm({
             </Dialog.Trigger>
 
             <Dialog.Portal>
-                {/* Backdrop Overlay */}
                 <Dialog.Overlay className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 animate-fadeIn" />
 
-                {/* Modal Dialog Content */}
                 <Dialog.Content className="fixed z-50 top-1/2 left-1/2 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white dark:bg-zinc-950 p-6 shadow-xl border border-zinc-200 dark:border-zinc-800">
                     <Dialog.Title className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
                         Submit a new link
@@ -45,7 +43,6 @@ export function SubmitLinkForm({
                         the links accordingly!
                     </Dialog.Description>
 
-                    {/* Action Buttons */}
                     <div className="mt-6 flex justify-end gap-3">
                         <Dialog.Close asChild>
                             <button
@@ -64,9 +61,9 @@ export function SubmitLinkForm({
                         </button>
                     </div>
 
-                    {/* Close X Button */}
                     <Dialog.Close asChild>
                         <button
+                            type="button"
                             className="absolute right-4 top-4 p-1 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 rounded-lg transition-colors cursor-pointer"
                             aria-label="Close">
                             <X className="w-4 h-4" />

@@ -38,7 +38,7 @@ export default function RootLayout({
                             <span className="font-semibold text-sm">
                                 StackShelf
                             </span>
-                            <span className="text-[10px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 px-2 py-[1px] rounded-xl absolute -top-1 -right-10 border border-zinc-200 dark:border-zinc-700">
+                            <span className="text-[10px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 px-2 py-px rounded-xl absolute -top-1 -right-10 border border-zinc-200 dark:border-zinc-700">
                                 Beta
                             </span>
                         </div>

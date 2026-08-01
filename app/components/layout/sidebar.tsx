@@ -44,7 +44,7 @@ export default function Sidebar() {
                         <Link
                             key={category.name}
                             href={category.url}
-                            className={`flex items-center justify-between px-3 py-2 text-sm rounded-lg transition-colors ${
+                            className={`flex items-center justify-between px-3 py-2 gap-2.5 text-sm rounded-lg transition-colors ${
                                 isActive
                                     ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 font-semibold"
                                     : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/50 hover:text-zinc-900 dark:hover:text-zinc-100"
