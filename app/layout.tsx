@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Sidebar from "./components/layout/sidebar";
 import { SubmitLinkForm } from "./components/resources/submit-form";
+import { Footer } from "./components/layout/footer";
 import Image from "next/image";
 import Link from "next/link";
 import { ThemeProvider } from "./components/theme-provider";
@@ -29,10 +30,10 @@ export default function RootLayout({
                     attribute="class"
                     defaultTheme="system"
                     enableSystem>
-                    {/* Main Full-Screen Container */}
-                    <div className="h-screen overflow-hidden bg-white dark:bg-zinc-950">
-                        {/* Header Bar */}
-                        <header className="flex items-center justify-between px-3 sm:px-6 h-14 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+                    {/* Viewport Height Fixed Wrapper */}
+                    <div className="h-screen flex flex-col overflow-hidden bg-white dark:bg-zinc-950">
+                        {/* Header Bar (shrink-0 keeps fixed height) */}
+                        <header className="h-14 shrink-0 flex items-center justify-between px-3 sm:px-6 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 z-10">
                             {/* Logo + Title + Beta Badge */}
                             <Link
                                 href="/"
@@ -55,19 +56,23 @@ export default function RootLayout({
                                 </div>
                             </Link>
 
-                            {/* Right Actions */}
+                            {/* Actions */}
                             <div className="flex items-center gap-3">
                                 <ThemeToggle />
                                 <SubmitLinkForm />
                             </div>
                         </header>
 
-                        {/* Layout Body (Sidebar + Content Area) */}
-                        <div className="flex flex-col sm:flex-row bg-white dark:bg-zinc-950">
+                        <div className="flex-1 flex flex-col sm:flex-row min-h-0 overflow-hidden">
                             <Sidebar />
-                            <main className="flex-1 p-2 sm:p-6 overflow-y-auto bg-white dark:bg-zinc-950">
-                                {children}
-                            </main>
+
+                            {/* Scrollable Main Area */}
+                            <div className="flex-1 flex flex-col overflow-y-auto min-h-0 bg-white dark:bg-zinc-950">
+                                <main className="flex-1 p-3 sm:p-6">
+                                    {children}
+                                </main>
+                                <Footer />
+                            </div>
                         </div>
                     </div>
                 </ThemeProvider>
