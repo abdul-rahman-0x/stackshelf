@@ -15,7 +15,6 @@ export default function CategoryPage() {
     const category = (params.category as string) || "";
     const [searchQuery, setSearchQuery] = useState("");
 
-    // Filter resources matching current category AND search query
     const filteredResources = useMemo(() => {
         return resources.filter((item) => {
             const searchContent =
@@ -39,8 +38,8 @@ export default function CategoryPage() {
     };
 
     return (
-        <div className="animate-slideUp">
-            {/* Category Header: Back Arrow + Category Title */}
+        <div className="animate-slideUp pb-12">
+            {/* Header */}
             <div className="flex gap-2 items-center pb-3">
                 <Link
                     href="/"
@@ -53,14 +52,12 @@ export default function CategoryPage() {
                 </h1>
             </div>
 
-            {/* Search Input */}
             <Suspense>
                 <SearchBar onSearch={handleSearch} initialQuery={searchQuery} />
             </Suspense>
 
-            {/* Filtered Grid or Fallback */}
             {filteredResources.length > 0 ? (
-                <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-2 xl:grid-cols-3 overflow-y-auto max-h-[calc(100vh-11rem)] sm:max-h-[calc(100vh-9rem)] [&::-webkit-scrollbar]:hidden">
+                <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-2 xl:grid-cols-3">
                     {filteredResources.map((resource) => (
                         <ResourceCard key={resource.id} resource={resource} />
                     ))}
