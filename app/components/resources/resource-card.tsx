@@ -44,6 +44,7 @@ export function ResourceCard({ resource }: ResourceCardProps) {
                         width={28}
                         height={28}
                         className="object-contain"
+                        style={{ width: "auto", height: "auto" }}
                     />
                 </div>
             </div>
